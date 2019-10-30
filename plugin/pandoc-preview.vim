@@ -39,7 +39,7 @@ function! s:PandocMarkdownPreview()
     silent exec 'lcd %:p:h'
     if (s:PandocGenerateFile() == 0) && exists('g:pandoc_preview_pdf_cmd')
         let pdf = s:PdfFileName()
-		call system(printf("%s %s &", shellescape(g:pandoc_preview_pdf_cmd), pdf))
+        call system(printf("%s %s &", shellescape(g:pandoc_preview_pdf_cmd), pdf))
         echo pdf.' was generated.'
     
         augroup Preview
